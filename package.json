@@ -1,17 +1,29 @@
 {
-  "name": "meanapp_intro",
+  "name": "meanapp",
   "version": "1.0.0",
-  "description": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
-  "main": "readme.js",
+  "description": "CRUD MEAN app",
+  "main": "angular.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.11.4"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "\"echo \\ \"Error: no test specified\\\" && exit 1\",",
     "start": "node server.js"
   },
-  "author": "Sarthak Bhatt",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogueriderhood/mean-project.git"
+  },
+  "keywords": [
+    "mean"
+  ],
+  "author": "Jason McClure",
   "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "mongoose": "^4.6.8"
-  }
+  "bugs": {
+    "url": "https://github.com/rogueriderhood/mean-project/issues"
+  },
+  "homepage": "https://github.com/rogueriderhood/mean-project#readme"
 }

@@ -20,9 +20,5 @@ myApp.config(function($routeProvider){
         .when('/employees/:id/show', {
             templateUrl:'templates/show.html',
             controller:'empController'
-        })
-		        .when('/employees/:id/delete', {
-            templateUrl:'templates/delete.html',
-            controller:'empController'
         });
 });
