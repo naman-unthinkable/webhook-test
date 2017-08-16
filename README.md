@@ -33,133 +33,126 @@ Let us understand the structure of our application:
     8. Open http://localhost:3000 **
     
  # Introduction
-Full stack development comprises of front-end library to ensure data-binding and views or to build up for client side, 
-database in the back to store the data, a middle ware to help process interact with each other and finally a server. 
-The stack we will be using to create a web application in this course is MEAN stack. Where ‘M’ stands for MongoDb, ‘E’ for 
-Express.js and ‘A’ and ‘N’ for Angular.js and Node.js respectively.
-In MEAN stack, Angular.js being the client side makes AJAX calls to Express.js which in turn responds in JSON format. 
-Express which runs on Node.js server further communicates with MongoDB as persistent medium.                        
+Full stack web development consists of a front-end library for data-binding and client-side views, a database for data storage, a middleware layer for process interaction, and a web server for services. 
+The stack we will be using to create a web application in this course is the MEAN stack. The acronym stands for: ‘M’ for MongoDb, ‘E’ for Express.js, ‘A’ for Angular.js, and ‘N’ for Node.js.
+In MEAN stack web development, Angular.js is on the client side and makes AJAX calls to Express.js. Express responds to the calls in JSON format. Express, running on Node.js server, further communicates with MongoDB.                        
+                 
 	
 # Overview
 
-Before we start developing the web application, it’s good to delve into the individual technologies that sum up for MEAN stack to get a
-better hands-on learning of it.
-Starting with the front-end part, Angular.js plays the backbone for creating the client side controls of web browser. Let’s discuss 
-more about it:
-Angular JS: Angular JS is an open source framework powered by google, which helps us build dynamic web applications. To make your code 
-much shorter and clear, Angular JS comes with pre-built libraries for solving the purpose of data binding and dependency injection m
-aking the overall length of code shorter. Not only it has ease the dynamicity of web application, but also all its functions are
-executed within the browser making it more server friendly. 
-Instead of building a language which focuses more in scripting browser’s behavior, Angular JS comes with another approach to bridge 
-the gap between static and dynamic functionalities of a simple html page. For this it sets up a whole new way to 
-communicate with browser and load it with newly formed syntax. The main core features of Angular JS which does this set up are: 
+Before we start developing the web application, it’s a good idea to delve into the individual technologies that make up a MEAN stack. 
+Angular JS: Angular JS is a Google powered, open source framework that helps build dynamic web applications by creating client side controls for web browsers. To help make your code shorter and clearer, Angular JS comes with pre-built libraries for data binding and dependency injection, making the overall length of the code shorter. Not only does it ease the dynamicity of web application, but its functions are executed within the browser making it more server friendly. 
+Instead of creating a language that focuses on scripting browsers’ behavior, Angular JS comes with an approach to bridge the gap between the static and dynamic functionalities of a simple html page. To do this, Angular JS sets up a new method to communicate with browsers and load them with newly formed syntax. The main core features of Angular JS that do this are: 
+
 
 o	Model View Whatever:	
-Rather than following MVC (Model view and controller), which is a basic design pattern for any application and divides the application into different parts, each with definite and distinguishable property, in its conventional manner, Angular JS follows another approach which is much like model-view-viewmodel and hence the developer called it as Model-view-whatever.
-
+Instead of following the MVC (model, view, and controller) pattern; a basic design pattern for programming that divides the application into different parts, each with clearly defined and distinguishable properties; Angular JS follows another approach that is like the “model-view-viewmodel” pattern, and it is called “Model-view-whatever”.
 
 o	Data – Binding:	
 It is the automatic synchronization of data between model and view components.
 
 o	Services:	
-AngularJS services are substitutable objects that are wired together using dependency injection (DI). You can use services to organize and share code across your app.
+AngularJS services are substitutable objects that are wired together using dependency injection (DI). You can use these services to organize and share code across your application.
 
 
-o	Directives:	In simple words, they are the instruction or set of instructions given to or called in Angular JS to manipulate a piece of the DOM(Document object-model).
+o	Directives:	
+They are the instructions or set of instructions given to or called forth in Angular JS to manipulate a piece of the DOM (Document object-model).
 
 o	Controller:	
-JavaScript functions bound to a particular scope in  the DOM.
+JavaScript functions are bound to a particular scope in the DOM.
 
-o	Dependency Injection:	Rather than creating an object inside a function, you pass it to the function. Likewise AngularJS comes with several pre built services which is injected in controller as dependencies. 
+o	Dependency Injection:	
+Instead of creating an object inside a function, you can pass an object to a function. Likewise, AngularJS comes with several prebuilt services which are injected into the controller as dependencies. 
 
-Setting Up Environment: You need to get some libraries installed in your system before you can use AngularJS in your web application. Steps below will explain how angular can be downloaded to make it usable for applications.
-•	Open link “ https://angularjs.org/ ”, and click on “Download AngularJS”.
-•	You will see the modal, providing you with various options to include Angular JS in your application.
+Setting Up Environment: You will need to get some libraries installed before you can use AngularJS for your web application. The steps below explain how angular can be downloaded to make it usable for applications.
+•	Open the link “https://angularjs.org/ ”, and click on “Download AngularJS”.
+•	You will see the modal and various options to include Angular JS in your application.
  
 
-•	Clicking on download will download the file named “angular.min.js”. It is just the minified version of “angular.js”. Save this file in the same folder of your web application.
-•	CDN: CDN (Content Delivery Network) loads and delivers all the web content and web pages from regional data centers to the user based in the specific geographic location of that center. Including CDN as a script source of your Angular JS benefits the application in several ways like: Referring to Google’s CDN service will prevent user from downloading the angular.js file in their system if your computer is the host for your application, also increased parallelism may decrease the sever load and efficient and fast loading of web page.
-•	Bower & NPM: Bower and NPM (Node package Manager) are the package components of several package manager of Client Side Javascript.
-Model View and Controller: So, here we need concept, we have data on one side and html page on another and we want to connect to those things. We want whatever happen on one should get affected on other and vice versa. Suppose, we have a model (the thing that defines data for our system) which also the brain of our system in which all the business logic is written and a view (In which our HTML code rests). 
- 
-Controller sets the communication between Model and view. The Idea behind introducing controller in this architecture is that it implements the separation of concern, meaning it separate the user interface with the business logic written so that anything that has been updated in model will automatically updated in HTML by controller without manually changing it in the view and vice versa. Also, the controller responds to  
-There exist one more framework on the similar concept but a slight change in controller’s idea, also known as Model-view-viewmodel. Angular is designed in a way in which it inherits the property of both the models to get the best features in its architecture, and so it actually do not have the exact property of controller from MVC and hence the developers called it as Model-view- Whatever (MV*). 
-Directives: AngularJS directives are used to extend HTML. These are special attributes starting with ng- prefix. 
-•	ng-app − This directive starts an AngularJS Application 
-It helps the model to look for html page. A model is, where all the logic, functions and controllers rest.
+•       Download the file named “angular.min.js” by clicking on the Download button. It is the minified version of “angular.js”. Save this file in the same folder used by your web application.
+•	CDN (Content Delivery Network) loads and delivers all web content and web pages from regional data centers to the user based on the specific geographic location of that center. Including the CDN as a source in the script of Angular JS benefits the application in a couple ways: Referring to Google’s CDN service will prevent a user from downloading the angular.js file in their system if your computer is the host of your application, and increased parallelism may decrease the sever load and increase speed and efficiency in the loading of webpages.
+•	Bower & NPM: Bower and NPM (Node package Manager) are the package components of several package managers for Client Side JavaScript.
+
+The Controller sets the communication between the Model and the View. The idea behind introducing a controller in this architecture is that it implements the separation of concern; in other words, it separates the user interface from the business logic and is written so that anything that has been updated in the model will automatically be updated in HTML by the controller without manually changing it in the view and vice versa. 
+There exists one other framework that features a similar concept with a slight change in the controller concept, known as Model-view-viewmodel. Angular is designed in a way that it inherits the property of both of the models in order to get the best features out of its architecture.  Since it does not have the exact property of the controller from the MVC pattern, developers have referred to it as Model-view- Whatever (MV*). 
+Directives: AngularJS directives are used to extend HTML. They are special attributes that start with the ng- prefix. 
+●	ng-app − This directive starts an AngularJS Application
  
 
-It seems Angular.js plays a vital role in bringing front-end of the application into some good actions. Once we get done with the dynamic front-end of our application, it’s time we learn about some server side technologies starting off with express.js, node.js and mongoDB.
-Express.js: Express.js is a light-weight node.js based web application framework. This JavaScript framework provides several flexible and useful features to develop mobile as well as web application using NodeJS.
-Following are some of the core features of Express framework -
-	Set up middlewares to respond to HTTP/RESTful Requests.
-	It is possible to defines a routing table to perform different HTTP operations.
-	Dynamically renders HTML Pages based on passing arguments to templates.
-	Provides all the feature provides by core Node.js.
-	Express prepare a thin layer; therefore, the performance is adequate.
-	Organize the web application into an MVC architecture.
-	Manages everything from routes to rendering view and preforming HTTP request
+Angular.js plays a vital role in bringing the front-end of applications into good action.  Now that we are finished with the dynamic front-end of our application, it’s time to learn about a few server-side technologies: express.js, node.js and mongoDB.
+Express.js: Express.js is a lightweight, node.js based web application framework. This JavaScript framework provides several flexible and useful features to develop mobile as well as web applications using NodeJS.
+The following are some of the core features of the Express framework:
+▪	Set up middleware to respond to HTTP/RESTful Requests
+▪	It can define a routing table to perform different HTTP operations
+▪	Dynamically renders HTML Pages based on passing arguments to templates
+▪	Provides all of the features provided by core Node.js
+▪	Express prepares a thin layer; meaning that the performance is adequate
+▪	Organizes the web application into an MVC architecture
+▪	Manages everything from routes to rendering views and performing HTTP requests
 
-Node.js: According to Nodejs.org, Nodejs is a JavaScript runtime or platform which has been built on Chrome v8’s JavaScript engine. This has become the most fast growing and popular platform for building fast and scalable network applications. With the command ‘node’ it starts the google chrome v8 engine and that enables the network to be accessible.
-Therefore, it is possible to access the file in the machine or to listen to the network traffic which is not possible using generic JavaScript. Therefore, any action which is possible to perform using ruby on rails or php, now it is possible to perform using JavaScript using Nodejs. Due to the extensively fast growing community and NPM, Nodejs is a very popular open source and cross platform application in order to develop server side and networking applications.
-Following are some of the core features of Node.js framework – 
 
-	Event driven application
-	Non-blocking, I/O Model
-	Web applications are more lightweight and efficient.
-	Public package repository, npm.
-	Asynchronous application development
-	Applications are single threaded.
-	High Performance
-	Single threaded but easily scalable.
+Node.js: According to Nodejs.org, NodeJS is a JavaScript runtime or platform which has been built on Chrome v8’s JavaScript engine. This has become the fastest growing and most popular platform for building fast and scalable network applications. With the command ‘node’, it starts the google chrome v8 engine that enables the network to be accessible.  It is possible to access the file in the machine or to listen to the network traffic, which is not possible using generic JavaScript. Any action that is possible to perform using ruby on rails or PHP is now possible to perform using JavaScript through NodeJS. Due to the extensively fast growing community and NPM, NodeJS is a very popular open source and cross platform application used to develop server side and networking applications.
+
+The following are some of the core features of Node.js framework: 
+▪	Event driven application
+▪	Non-blocking, I/O Model
+▪	Web applications are more lightweight and efficient
+▪	Public package repository, npm
+▪	Asynchronous application development
+▪	Applications are single threaded and easily scalable
+▪	High Performance
+
 CREATING THE APPLICATION
 
-Now, when we have the overview of all the technologies in MEAN stack, we must try to make a simple application and try to implement some CRUD (Create, Read, Update, Delete) functionalities into it with the help above mentioned technologies.
+Now that we have been introduced to all of the technologies that comprise the MEAN web development stack, the next step is to create a simple application that implements CRUD (Create, Read, Update, Delete) functionalities using the aforementioned technologies.  
 
-We will make an employee record system, in which we can insert the details of employee, update the details and delete them. Also, we can retrieve the list of all the employees we have stored in the database.
+We will make an employee record system where we can perform CRUD on employee details by creating new records, accessing current records, updating existing records, and deleting employee records from our database.   
 
-Let us understand the structure of our application:
-	Installing necessary programs.
-	Creating a folder with necessary packages.
-	Creating front end angular development.
-	Creating angular route, partials and controllers.
-	Creating node server.
-	Creating mongoose schema.
-	Creating express API’s to play with user data.
-	Creating HTML views.
+The structure for the application is as follows:
+▪	Installing necessary programs
+▪	Creating a folder with the necessary packages
+▪	Creating front end angular development
+▪	Creating angular routes, partials and controllers
+▪	Creating a node server
+▪	Creating a mongoose schema
+▪	Creating express APIs to manipulate user data
+▪	Creating HTML views
 
-** you will be required to have any of the IDE or text editor to write the codes for this application. For this guide, Visual studio was used to write the codes **
+** You will be required to have an IDE or text editor to write the codes for this application. For this, Visual studio was used to write the codes for this example, but any editor will work.   **
 
 Starting with Back-end
 
-**(If you already have node and mongo in your system, proceed with the next section) Ensure that you have node and mongo installed in your system. If not follow the steps described below to have them running into your system. **
+**(If you already have node and mongo on your system, proceed to the next section). Verify that you have node and mongo installed on your system; if not, follow the steps described below to have them installed onto your system. **
 
-  Installing Node.js
+Installing Node.js
+If you have not already installed node.js, go to https://nodejs.org and download the MSI that is listed under “Recommended for Most Users.”  Save the file and follow all installation instructions, using the recommended settings.  Install the program in the same location as your project folder.  
 
-  Installing MongoDb
+Installing MongoDb
+MongoDB can be installed from https://www.mongodb.com/download-center .  Download the applicable MSI file for your systems architecture, and install it with the recommended settings.  Install the database in the same location as your project folder.  
 
-Once you have it in your system running, make a folder named MEAN app in your system.
-Now we require all the libraries and packages, required to include them into our application to make it run.
+Once you have these running on your system, create a folder named MEAN App.
 
-Step 1: open the command prompt for the same folder and write npm install.
-This command will install the node packager manager and you can see the folder named node_modules in your root.
-Step 2: In the same command window write npm init, it will create the package.json file in your root folder and it will have all the details for your application regarding all of the node packages and version of all of the technologies that has been used, also it keeps the track of all of the technologies you use and gets updated automatically every time you install any package through npm.
+All libraries and packages are required, and we will include them in our application for it to be able to run.  
+Step 1: open the command prompt for the newly created folder and type npm install.
 
+This command will install the node packager manager and you should see the folder named node_modules in your root folder.  It should be empty and will be populated during other steps for the installation. 
+
+Step 2: In the same command window write npm init; it will create the package.json file in your root folder and will have all the details for your application regarding all of the node packages and versions of all of the technologies that has been used. It also keeps track of all of the technologies that you use and is updated automatically every time that you install any package through npm.
  
-Step 3: Installing the necessary packages in our system through npm. Write the following commands to install the required packages for our application.
+Step 3: Next, install the necessary packages in our system through npm. Write the following commands to install the required packages for our application.
 npm install express --save // installs the express.js package 
-npm install body-parser –save // installs body-parser package to parse http request to JSON format.
+npm install body-parser  –save // installs body-parser package to parse http request to JSON format.
 npm install mongoose –save // installs mongoose requires to create mongoDB schema
-Step 4: Create a new file and name it as server.js
-This file is responsible for making backend of our application. It has schema for data that will get stored in the database through APIs. Also, it has all the APIs which ensures CRUD functions in our server and it has the node server which runs the application on one of your web ports in system.
-	Call all the packages that we installed in step 3 to use them in our file.
-	var express = require('express');
-	var bodyParser = require('body-parser');
-	var app = express();
-	var mongoose = require('mongoose');
-	mongoose.connect('mongodb://localhost/employees');
+Step 4: Create a new file and name it server.js
+This file is responsible for creating the backend for our application. It has a schema for data that will get stored in the database through APIs. It also has all of the APIs that ensures CRUD functions in our server, and has the node server which runs the application on one of your web ports in the system.
+▪	Call all of the packages that we installed in step 3 to use them in our file.
+▪	var express = require('express');
+▪	var bodyParser = require('body-parser');
+▪	var app = express();
+▪	var mongoose = require('mongoose');
+▪	mongoose.connect('mongodb://localhost/employees');
 
-	Creating mongoose schema for our database
+▪	Create a mongoose schema for our database.
 
 var Employee = mongoose.model('Employee', mongoose.Schema({
     name:String,
@@ -170,33 +163,33 @@ var Employee = mongoose.model('Employee', mongoose.Schema({
     salary:String
 }));
 
-	Including Body Parser to parse all the data from http requests to JSON format , also some of the form data is sent through urlencoded service, hence we use body-parser to parse both types of data in JSON format.
+▪	Include Body Parser to parse all the data from http requests into JSON format. Some of the form data is sent through urlencoded service, so we can use body-parser to parse both types of data in JSON format.
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client'));
 
-	CREATING RESTFUL APIs
-In the same file we create our Restful APIs, before we start to write, we need to define the endpoint (or data) we want to expose
-For example endpoints such as:
 
+▪	CREATING RESTFUL APIs
+In the same file where we created our Restful APIs, we will need to define the endpoint (or data) that we want to expose.
+
+For example:
 /api/contacts (It will expose the details of all employees)
+
 Method	Description
 GET	Find all contacts
 POST	Create a new contact
 
 
-Format for writing such APIs is:
+Format for writing these type of APIs is:
 1.	app.get(“/api/contacts” function (req, res){
          })
 
 2.	app.post(“/api/contacts” function (req, res){
           })
 
+/api/contacts/:id (It will expose the details of a specific employee with the id)
 
-
-
-/api/contacts/:id (It will expose the detail of specific employee with the given id)
 Method	Description
 GET	Find a single contact by ID
 PUT	Update entire contact document
@@ -205,16 +198,7 @@ DELETE	Delete a contact by ID
 
 
 
-
-
-
-
-
-
-
-
-
-Format for writing Such APIs:
+Format for writing these APIs:
 1.	app.get(“/api/contacts/:id” function (req, res){
          })
 
@@ -224,7 +208,7 @@ Format for writing Such APIs:
 3.	app.delete(“/api/contacts/:id” function (req, res){
          })
 
-Step 5:  Now, we have the rules and syntax of writing APIs, let us write the API for getting all the employees from database
+Step 5:  Now that we have the rules and syntax for writing APIs, we can write the API for getting all of the employees from our database.
 app.get('/api/employees', function(req, res){
     Employee.find(function(err, employees){
         if(err)
@@ -234,7 +218,7 @@ app.get('/api/employees', function(req, res){
 });
 
 
-To add a new employee in the database:
+To add a new employee to the database:
 app.post('/api/employees', function(req, res){
     Employee.create( req.body, function(err, employees){
         if(err)
@@ -244,7 +228,6 @@ app.post('/api/employees', function(req, res){
 });
 
 To find a single employee by id:
-
 app.get('/api/employees/:id', function(req, res){
     Employee.findOne({_id:req.params.id}, function(err, employee){
         if(err)
@@ -270,10 +253,7 @@ app.put('/api/employees/:id', function(req, res){
     });
 });
 
-
-
-
-And, to delete the employee:
+And, to delete an employee:
 app.delete('/api/employees/:id', function(req, res){
     Employee.findOneAndRemove({_id:req.params.id}, function(err, employee){
         if(err)
@@ -281,26 +261,25 @@ app.delete('/api/employees/:id', function(req, res){
         res.json(employee);
     });
 });
-
-Once we have all the functionalities written on server side, it is ready to get hosted on one of our system port and to provide our sever with a port to start we write
+Once we have all the functionalities written on the server side, it is ready to get hosted on one of our system ports. To assign our server with a port we type:
 app.listen(3000, function(){
     console.log('server is running on port 3000..');
     });
-
-So now we have server running on port 3000.
-
-This was all about server.js file. Nest we will proceed with our front end part.
+Now we have a server running on port 3000.
+This was all about the server.js file. Next we will proceed with the front end part of the stack.
 
 STARTING WITH FRONT-END
-Step 1:  create a folder name client in your root folder. And make the files as shown in the picture below.
+Step 1:  Create a folder named client in your root folder. Make sure that the files are as shown in the picture below.
+
  
-Controller.js:  This file has all the controllers and javascript functions to control the behavior of web page. Also it has all the HTTP request to send data and generate view from server.
+Controller.js:  This file has all the controllers and JavaScript functions to control the behavior of a webpage. It also has all the HTTP requests to send data and generate views from the server.
 App.js: Since we are making a single page application and we don't want any page refreshes, we'll use Angular's routing capabilities.
-Let's look in our Angular file and add to our application. We will be using $routeProvider in Angular to handle our routing. This way, Angular will handle all of the magic required to go get a new file and inject it into our layout.
-Index.html: It has 	the main layout for our application.
-Other HTML pages in template folder, is separate view of screen we have in our app and it will be injected in our index.html through routing.
+
+Let's look in our Angular file and add it to our application. We will be using $routeProvider in Angular to handle our routing. This way, Angular will handle all of the magic required to go get a new file and inject it into our layout.
+Index.html: It has the main layout of our application.
+Another HTML page in the template folder, is a separate view of the screen that we have in our app, and it will be injected in our index.html through routing.
 Step 1: Creating index.html
-Including ng-app in the header, binds our html with angular modules and controllers.
+Including ng-app in the header binds the html with angular modules and controllers.
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp"> 
 <head>
@@ -345,13 +324,10 @@ eration</h3>
 
 </body>
 </html>
-
-Step 2: Create app .js file. In this we will use $routeProvider  in angular to handle all our routing.  This way angular will handle all the action required to get a new file and inject it into our layout.
+Step 2: Create an app.js file. We will use $routeProvider in angular to handle all our routing.  This way, angular will handle all of the action required to get a new file and inject it into our layout.
 Var myApp = angular.module(‘myApp’, [‘ngRoute’]);
-The [‘ngRoute’] is the dependency here that we will be calling in our app.js file. These are pre-built modules resting in angular.js file which we include in our script section in index.html. 
-Once we have dependency injected in our module we use it in a function to handle all of the actions. So. Whenever $routeprovider.when is used, it will look for the template url to bring the new page data along with its controller and place it in ng-view section of index.html.
-
-
+The [‘ngRoute’] is the dependency that we will be calling in our app.js file. These are pre-built modules resting in our angular.js file which we will include in our script section in index.html. 
+Once we have a dependency injected into our module, we will use it in a function to handle all of the actions. Whenever $routeprovider is used, it will look for the template url to bring the new page data along with its controller and place it in ng-view section of index.html.
 var myApp = angular.module('myApp',['ngRoute']);
 myApp.config(function($routeProvider){
     $routeProvider
@@ -374,22 +350,24 @@ myApp.config(function($routeProvider){
         .when('/employees/:id/show', {
             templateUrl:'templates/show.html',
             controller:'empController'
+        })
+		        .when('/employees/:id/delete', {
+            templateUrl:'templates/delete.html',
+            controller:'empController'
         });
 });
 
-
-Step 3:   Let’s add controller, In order to make our http requests to the server.
-	Declare the name of the controller, in our case we named it as ‘empController’ and inject the dependencies that will be required to bring some action in out html pages.
-	The dependencies we use here are [$scope, $route, $routeParams, $http] .
+Step 3:   Let’s add a controller, in order to make http requests to the server.
+▪	Declare the name of the controller, in our case we named it ‘empController’ and inject the dependencies that will be required to bring some action in our html pages.
+▪	The dependencies we used here are [$scope, $route, $routeParams, $http] .
 myApp.controller('empController',function($scope,$route,$routeParams,$http){
  
-making a request to get all of the employees from server to list.
+Make a request to get all of the employees from server to list.
 $scope.getEmployees = function(){
         $http.get('/api/employees/').then(function(response){
             $scope.employees = response.data;
         });
     };
-
 
 Show employee:
 $scope.showEmployee = function(){
@@ -428,7 +406,7 @@ Delete Employee:
 });
 
 Step 4: Adding html pages
-	Add.html
+▪	Add.html
 <div class="panel panel-default">
   <div class="panel-heading">
     <p class="panel-title"><span style="color:#5bc0de;" class="glyphicon glyphicon-plus"> </span> Add New Employee</p>
@@ -464,12 +442,8 @@ Step 4: Adding html pages
 <div>
 
 Add html layout:
- 
 
 
-
-
-	Edit.html
 
 <div class="panel panel-default" ng-init="showEmployee()">
   <div class="panel-heading">
@@ -507,31 +481,13 @@ class="glyphicon glyphicon-edit"> </span> Edit Employee</p>
 <div>
 
 
-	Show.html
+▪	Show.html
 
-<div class="panel panel-default" ng-init="showEmployee()">
-  <div class="panel-heading">
-    <p class="panel-title"> Employee Detail Information</p>
-  </div>
-  <div class="panel-body">
-    <form>
-    <div class="form-group">
-     <label class="form-control">Name: {{ employee.name }}</label>
-     <label class="form-control">Department: {{ employee.dept }}</label>
-     <label class="form-control">Location: {{ employee.area }}</label>
-     <label class="form-control">Job Status: {{ employee.status }}</label>
-     <label class="form-control">Contact: {{ employee.contact }}</label>
-     <label class="form-control">Salary: {{ employee.salary }}</label>
-     <label class="form-control">ID: {{ employee._id }}</label>
-    <a href="#/employees" class="btn btn-default"> Cancel</a>
-    </div>
-  </form>   
-    <div>
-<div>
 
 Show employee layout:
+
  
-	List.html
+▪	List.html
 
 <div class="panel panel-default" ng-init="getEmployees()">
   <div class="panel-heading">
@@ -565,24 +521,82 @@ class="glyphicon glyphicon-list"> </span> Employees List</p>
 <div>
 
 
-List employees layout:
- 
-
-
+List employees:
 
 
 Starting application on Local host.
-	Start mongo server by using mongod command in command prompt.
-	Start app server by opening command prompt in root folder by using node server.js
-	Open http://localhost:3000 to run the application.4
+▪	Start the mongo server by using mongod command via the command prompt in the bin folder of the mongo installation (for example: //MongoDB/Server/3.4/bin)
+▪	Start the app server by opening the command prompt in the root folder by using node server.js
+▪	Open http://localhost:3000 to run the application.
 
+CRUD functions using cURL
+Once your application is up and running, you can also test its CRUD functionalities using the cURL command in a command line.  For the following section, GIT Bash was used to run the commands, but any command line tool that can perform cURL commands will work.  The following section features the cURL commands and output.    
+1. Create - Add a new user:
+$ curl -i -X POST -H 'Content-Type: application/json' -d '{"name": "Felix", "department": "Cyber","location":"DC","salary":"100,000"}' http://localhost:3000/api/employees
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 76
+ETag: W/"4c-Y7gak9q+zXsEyMkR8OBtkiPLCj0"
+Date: Wed, 09 Aug 2017 20:02:06 GMT
+Connection: keep-alive
 
+{"__v":0,"name":"Felix","salary":"100,000","_id":"598b6a3e1c69d020a4e327c2"}
 
+2. Read - Get a list of all employees: 
+$ curl -i -X GET http://localhost:3000/api/employees
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 990
+ETag: W/"3de-+Ucl/hGMHabMR4QfLEtkHwP+/mQ"
+Date: Wed, 09 Aug 2017 20:04:05 GMT
+Connection: keep-alive
 
+[{"_id":"5980cb18e679b01c685bdc86","name":"Jason","dept":"Information Systems","area":"DC","contact":"666-666-6666","status":"Employed","salary":"90,000","__v":0},{"_id":"5980f31ce679b01c685bdc87","name":"Will","dept":"English","area":"Laurel","contact":"444-444-4444","status":"Intern","__v":0,"salary":"60,000"},{"_id":"5980f578e679b01c685bdc88","__v":0,"name":"Jackie","dept":"Fundraising","area":"Baltimore","status":"Employed","contact":"222-222-2222","salary":"65,000"},{"_id":"5980f5ffe679b01c685bdc89","__v":0,"name":"Tyrone","dept":"Engineering","area":"Columbia","status":"Waiting","contact":"111-111-1111","salary":"45,000"},{"_id":"5980f672e679b01c685bdc8a","__v":0,"name":"Real","dept":"Driving","area":"Maryland","status":"Employed","contact":"000-000-0000","salary":"30,000"},{"_id":"5989f73e500be7248c45c001","name":null,"__v":0,"dept":null,"area":null,"status":null,"contact":null,"salary":null},{"_id":"598b6a3e1c69d020a4e327c2","name":"Felix","salary":"100,000","__v":0}]  
+
+     Get single employee with _id value of XXXXXX (use a value that exists in your app):
+$ curl -i -X GET http://localhost:3000/api/employees/598b6a3e1c69d020a4e327c2
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 76
+ETag: W/"4c-aDAtdq3402mRIqdHvi21lQdG+Hg"
+Date: Wed, 09 Aug 2017 20:04:57 GMT
+Connection: keep-alive
+
+{"_id":"598b6a3e1c69d020a4e327c2","name":"Felix","salary":"100,000","__v":0}
+
+3. Update - Modify user with _id value of XXXXXXXXX (copy _ID from the database)
+$ curl -i -X PUT -H 'Content-Type: application/json' -d '{"name": "Jeremy", "department": "Security","location":"College Park","salary":"55,000"}' http://localhost:300
+0/api/employees/598b6a3e1c69d020a4e327c2
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 76
+ETag: W/"4c-aDAtdq3402mRIqdHvi21lQdG+Hg"
+Date: Wed, 09 Aug 2017 20:06:30 GMT
+Connection: keep-alive
+
+{"_id":"598b6a3e1c69d020a4e327c2","name":"Felix","salary":"100,000","__v":0}
+
+4. Delete – Delete user with _id value of XXXXXXXXXXX:
+$ curl -i -X DELETE http://localhost:3000/api/employees/5980f672e679b01c685bdc8a
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 121
+ETag: W/"79-8o8qI9PIoA6IpOD6G/l49uQCkGI"
+Date: Tue, 15 Aug 2017 14:24:12 GMT
+Connection: keep-alive
+
+{"_id":"5980f672e679b01c685bdc8a","__v":0,"name":null,"dept":null,"area":null,"status":null,"contact":null,"salary":null}
 Conclusion
-In this way, we complete our MEAN stack application with CRUD functionalities. It was done in two parts, first we created the server side scripting, in which it had schema for mongoDB handled by mongoose, APIs for exposing data and starting the server on one our local ports. In this, we hosted it on http://localhost:3000.
-In the second part, we created the client-side view through angular.js, which was done with routing and ng-view to inject different files into index.html.
-Also we had controllers written with injected dependencies to make request and send data to server through $http methods.
-These all frameworks of javascripts are single threaded and generally follow asynchronous method and is easy to scale your website. MEAN stack can be easily created and deployed on servers, as most of them support javascript.
+In summary, this completes our MEAN stack application with CRUD functionalities. It was done in two parts. First we created the server side scripting, where we used the schema for mongoDB that was handled by mongoose, APIs for exposing data, and starting the server on one our local ports. For this, we hosted it on http://localhost:3000.
+In the second part, we created the client-side view through angular.js, which was done with routing, and ng-view to inject different files into the index.html.
+We wrote controllers with injected dependencies to make requests and send data to the server through $http methods.
+We used curl to issue CRUD commands via command line to manipulate the running application.  This is another way to demonstrate that the application is working, along with manipulating the data via the GUI on localhost. 
+These frameworks of javascripts are single threaded and generally follow an asynchronous method, and are scalable for any website. MEAN stacks can be easily created and deployed on servers, as most of the servers support JavaScript.
+
 
 >>>>>>> origin/master
