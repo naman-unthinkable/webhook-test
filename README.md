@@ -282,9 +282,8 @@ Index.html: It has the main layout of our application.
 Another HTML page in the template folder, is a separate view of the screen that we have in our app, and it will be injected in our index.html through routing.
 
 Step 1: Creating index.html
-Including ng-app in the header binds the html with angular modules and controllers. We use ng-view to inject different pages in index.html through routing.
-
-# DOCTYPE html
+Including ng-app in the header binds the html with angular modules and controllers. We use ng-view to inject different pages in index.html through routing
+//<!DOCTYPE html>
 <html lang="en" ng-app="myApp"> 
 <head>
     <meta charset="UTF-8">
