@@ -283,7 +283,8 @@ Another HTML page in the template folder, is a separate view of the screen that 
 
 Step 1: Creating index.html
 Including ng-app in the header binds the html with angular modules and controllers. We use ng-view to inject different pages in index.html through routing.
-<!DOCTYPE html>
+
+# DOCTYPE html
 <html lang="en" ng-app="myApp"> 
 <head>
     <meta charset="UTF-8">
@@ -541,7 +542,7 @@ Connection: keep-alive
 
 [{"_id":"5980cb18e679b01c685bdc86","name":"Jason","dept":"Information Systems","area":"DC","contact":"666-666-6666","status":"Employed","salary":"90,000","__v":0},{"_id":"5980f31ce679b01c685bdc87","name":"Will","dept":"English","area":"Laurel","contact":"444-444-4444","status":"Intern","__v":0,"salary":"60,000"},{"_id":"5980f578e679b01c685bdc88","__v":0,"name":"Jackie","dept":"Fundraising","area":"Baltimore","status":"Employed","contact":"222-222-2222","salary":"65,000"},{"_id":"5980f5ffe679b01c685bdc89","__v":0,"name":"Tyrone","dept":"Engineering","area":"Columbia","status":"Waiting","contact":"111-111-1111","salary":"45,000"},{"_id":"5980f672e679b01c685bdc8a","__v":0,"name":"Real","dept":"Driving","area":"Maryland","status":"Employed","contact":"000-000-0000","salary":"30,000"},{"_id":"5989f73e500be7248c45c001","name":null,"__v":0,"dept":null,"area":null,"status":null,"contact":null,"salary":null},{"_id":"598b6a3e1c69d020a4e327c2","name":"Felix","salary":"100,000","__v":0}]  
 
-3. Get single employee with _id value of XXXXXX (use a value that exists in your app):
+3. Read - Get single employee with _id value of XXXXXX (use a value that exists in your app):
 $ curl -i -X GET http://localhost:3000/api/employees/598b6a3e1c69d020a4e327c2
 HTTP/1.1 200 OK
 X-Powered-By: Express
