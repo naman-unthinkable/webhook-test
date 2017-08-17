@@ -104,7 +104,7 @@ o 	Asynchronous application development
 o 	Applications are single threaded and easily scalable
 o 	High Performance
 
-CREATING THE APPLICATION
+# Creating the Application
 
 Now that we have been introduced to all of the technologies that comprise the MEAN web development stack, the next step is to create a simple application that implements CRUD (Create, Read, Update, Delete) functionalities using the aforementioned technologies.  
 
@@ -280,8 +280,9 @@ App.js: Since we are making a single page application and we don't want any page
 Let's look in our Angular file and add it to our application. We will be using $routeProvider in Angular to handle our routing. This way, Angular will handle all of the magic required to go get a new file and inject it into our layout.
 Index.html: It has the main layout of our application.
 Another HTML page in the template folder, is a separate view of the screen that we have in our app, and it will be injected in our index.html through routing.
+
 Step 1: Creating index.html
-Including ng-app in the header binds the html with angular modules and controllers.
+Including ng-app in the header binds the html with angular modules and controllers. We use ng-view to inject different pages in index.html through routing.
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp"> 
 <head>
@@ -303,11 +304,7 @@ Including ng-app in the header binds the html with angular modules and controlle
                 <span class="glyphicon glyphicon-plus"> </span> Add New Employee</a></li>
               </ul>
             </nav>
-            <h3 class="text-muted">Simple MEAN web Application using CRUD op
-eration</h3>
-
-//WE use ng-view to inject different pages in index.html through routing.
-
+            <h3 class="text-muted">Simple MEAN web Application using CRUD operation</h3>
         </div>
         <div ng-view></div>
         
@@ -326,6 +323,7 @@ eration</h3>
 
 </body>
 </html>
+
 Step 2: Create an app.js file. We will use $routeProvider in angular to handle all our routing.  This way, angular will handle all of the action required to get a new file and inject it into our layout.
 Var myApp = angular.module(‘myApp’, [‘ngRoute’]);
 The [‘ngRoute’] is the dependency that we will be calling in our app.js file. These are pre-built modules resting in our angular.js file which we will include in our script section in index.html. 
@@ -443,10 +441,7 @@ o 	Add.html
     <div>
 <div>
 
-Add html layout:
-
-
-
+# Add html layout:
 <div class="panel panel-default" ng-init="showEmployee()">
   <div class="panel-heading">
     <p class="panel-title"><span style="color:#5bc0de;" 
@@ -482,15 +477,7 @@ class="glyphicon glyphicon-edit"> </span> Edit Employee</p>
     <div>
 <div>
 
-
-o 	Show.html
-
-
-Show employee layout:
-
- 
-o 	List.html
-
+# Show employee layout:
 <div class="panel panel-default" ng-init="getEmployees()">
   <div class="panel-heading">
     <p class="panel-title"><span style="color:#5bc0de;" 
@@ -522,16 +509,13 @@ class="glyphicon glyphicon-list"> </span> Employees List</p>
     <div>
 <div>
 
-
-List employees:
-
-
+# List employees:
 Starting application on Local host.
 o 	Start the mongo server by using mongod command via the command prompt in the bin folder of the mongo installation (for example: //MongoDB/Server/3.4/bin)
 o 	Start the app server by opening the command prompt in the root folder by using node server.js
 o 	Open http://localhost:3000 to run the application.
 
-CRUD functions using cURL
+# CRUD functions using cURL:
 Once your application is up and running, you can also test its CRUD functionalities using the cURL command in a command line.  For the following section, GIT Bash was used to run the commands, but any command line tool that can perform cURL commands will work.  The following section features the cURL commands and output.    
 1. Create - Add a new user:
 $ curl -i -X POST -H 'Content-Type: application/json' -d '{"name": "Felix", "department": "Cyber","location":"DC","salary":"100,000"}' http://localhost:3000/api/employees
@@ -557,7 +541,7 @@ Connection: keep-alive
 
 [{"_id":"5980cb18e679b01c685bdc86","name":"Jason","dept":"Information Systems","area":"DC","contact":"666-666-6666","status":"Employed","salary":"90,000","__v":0},{"_id":"5980f31ce679b01c685bdc87","name":"Will","dept":"English","area":"Laurel","contact":"444-444-4444","status":"Intern","__v":0,"salary":"60,000"},{"_id":"5980f578e679b01c685bdc88","__v":0,"name":"Jackie","dept":"Fundraising","area":"Baltimore","status":"Employed","contact":"222-222-2222","salary":"65,000"},{"_id":"5980f5ffe679b01c685bdc89","__v":0,"name":"Tyrone","dept":"Engineering","area":"Columbia","status":"Waiting","contact":"111-111-1111","salary":"45,000"},{"_id":"5980f672e679b01c685bdc8a","__v":0,"name":"Real","dept":"Driving","area":"Maryland","status":"Employed","contact":"000-000-0000","salary":"30,000"},{"_id":"5989f73e500be7248c45c001","name":null,"__v":0,"dept":null,"area":null,"status":null,"contact":null,"salary":null},{"_id":"598b6a3e1c69d020a4e327c2","name":"Felix","salary":"100,000","__v":0}]  
 
-     Get single employee with _id value of XXXXXX (use a value that exists in your app):
+3. Get single employee with _id value of XXXXXX (use a value that exists in your app):
 $ curl -i -X GET http://localhost:3000/api/employees/598b6a3e1c69d020a4e327c2
 HTTP/1.1 200 OK
 X-Powered-By: Express
@@ -569,7 +553,7 @@ Connection: keep-alive
 
 {"_id":"598b6a3e1c69d020a4e327c2","name":"Felix","salary":"100,000","__v":0}
 
-3. Update - Modify user with _id value of XXXXXXXXX (copy _ID from the database)
+4. Update - Modify user with _id value of XXXXXXXXX (copy _ID from the database)
 $ curl -i -X PUT -H 'Content-Type: application/json' -d '{"name": "Jeremy", "department": "Security","location":"College Park","salary":"55,000"}' http://localhost:300
 0/api/employees/598b6a3e1c69d020a4e327c2
 HTTP/1.1 200 OK
@@ -582,7 +566,7 @@ Connection: keep-alive
 
 {"_id":"598b6a3e1c69d020a4e327c2","name":"Felix","salary":"100,000","__v":0}
 
-4. Delete – Delete user with _id value of XXXXXXXXXXX:
+5. Delete – Delete user with _id value of XXXXXXXXXXX:
 $ curl -i -X DELETE http://localhost:3000/api/employees/5980f672e679b01c685bdc8a
 HTTP/1.1 200 OK
 X-Powered-By: Express
@@ -593,7 +577,8 @@ Date: Tue, 15 Aug 2017 14:24:12 GMT
 Connection: keep-alive
 
 {"_id":"5980f672e679b01c685bdc8a","__v":0,"name":null,"dept":null,"area":null,"status":null,"contact":null,"salary":null}
-Conclusion
+
+# Conclusion
 In summary, this completes our MEAN stack application with CRUD functionalities. It was done in two parts. First we created the server side scripting, where we used the schema for mongoDB that was handled by mongoose, APIs for exposing data, and starting the server on one our local ports. For this, we hosted it on http://localhost:3000.
 In the second part, we created the client-side view through angular.js, which was done with routing, and ng-view to inject different files into the index.html.
 We wrote controllers with injected dependencies to make requests and send data to the server through $http methods.
