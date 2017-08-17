@@ -283,7 +283,9 @@ Another HTML page in the template folder, is a separate view of the screen that 
 
 Step 1: Creating index.html
 Including ng-app in the header binds the html with angular modules and controllers. We use ng-view to inject different pages in index.html through routing
-//<!DOCTYPE html>
+
+{::nomarkdown}
+<!DOCTYPE html>
 <html lang="en" ng-app="myApp"> 
 <head>
     <meta charset="UTF-8">
@@ -323,6 +325,7 @@ Including ng-app in the header binds the html with angular modules and controlle
 
 </body>
 </html>
+{:/}
 
 Step 2: Create an app.js file. We will use $routeProvider in angular to handle all our routing.  This way, angular will handle all of the action required to get a new file and inject it into our layout.
 Var myApp = angular.module(‘myApp’, [‘ngRoute’]);
