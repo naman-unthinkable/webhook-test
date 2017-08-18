@@ -538,6 +538,7 @@ Connection: keep-alive
 ```
 
 Read - Get a list of all employees: 
+```html
 $ curl -i -X GET http://localhost:3000/api/employees
 HTTP/1.1 200 OK
 X-Powered-By: Express
@@ -548,9 +549,10 @@ Date: Fri, 18 Aug 2017 14:33:54 GMT
 Connection: keep-alive
 
 [{"_id":"5980cb18e679b01c685bdc86","name":"Jason","dept":"jhhjjj","area":"DC","contact":"666-666-6666","status":"Employed","salary":"90,000","__v":0},{"_id":"5980f31ce679b01c685bdc87","name":"Will","dept":"English","area":"Laurel","contact":"444-444-4444","status":"Intern","__v":0,"salary":"60,000"},{"_id":"5980f578e679b01c685bdc88","__v":0,"name":"Jackie","dept":"Fundraising","area":"Baltimore","status":"Employed","contact":"222-222-2222","salary":"65,000"},{"_id":"5980f5ffe679b01c685bdc89","__v":0,"name":"Tyrone","dept":"Engineering","area":"Columbia","status":"Waiting","contact":"111-111-1111","salary":"45,000"},{"_id":"5989f73e500be7248c45c001","name":null,"__v":0,"dept":null,"area":null,"status":null,"contact":null,"salary":null},{"_id":"598b6a3e1c69d020a4e327c2","name":"Fred","salary":"1,000,000","__v":0,"dept":"Law","area":"Here","status":null,"contact":null},{"_id":"599366ce771f4b1f3c167f41","name":"Professor","salary":"80,000","__v":0},{"_id":"599367ce771f4b1f3c167f42","name":"Profesdsdr","dept":"Information","area":"Catonsville","salary":"80,000","__v":0},{"_id":"5996fa23fb9f8d283015da78","name":"Student","dept":"Information","area":"Campus","salary":"70,000","__v":0}]
-
+```
 
 Read - Get single employee with _id value of XXXXXX (use a value that exists in your app):
+```html
 $ curl -i -X GET http://localhost:3000/api/employees/598b6a3e1c69d020a4e327c2
 HTTP/1.1 200 OK
 X-Powered-By: Express
@@ -561,11 +563,11 @@ Date: Fri, 18 Aug 2017 14:32:00 GMT
 Connection: keep-alive
 
 {"_id":"598b6a3e1c69d020a4e327c2","name":"Fred","salary":"1,000,000","__v":0,"dept":"Law","area":"Here","status":null,"contact":null}
+```
 
-
-Update - Modify user with _id value of XXXXXXXXX (copy _ID from the database)
-$ curl -i -X PUT -H 'Content-Type: application/json' -d '{"name": "Jeremy", "department": "Security","location":"College Park","salary":"55,000"}' http://localhost:300
-0/api/employees/598b6a3e1c69d020a4e327c2
+Update - Modify user with _id value of XXXXXXXXX (copy _ID from the database):
+```html
+$ curl -i -X PUT -H 'Content-Type: application/json' -d '{"name": "Jeremy", "department": "Security","location":"College Park","salary":"55,000"}' http://localhost:3000/api/employees/598b6a3e1c69d020a4e327c2
 HTTP/1.1 200 OK
 X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
@@ -575,8 +577,10 @@ Date: Wed, 09 Aug 2017 20:06:30 GMT
 Connection: keep-alive
 
 {"_id":"598b6a3e1c69d020a4e327c2","name":"Felix","salary":"100,000","__v":0}
+```
 
 Delete – Delete user with _id value of XXXXXXXXXXX:
+```html
 $ curl -i -X DELETE http://localhost:3000/api/employees/5980cb18e679b01c685bdc86
 HTTP/1.1 200 OK
 X-Powered-By: Express
@@ -587,7 +591,7 @@ Date: Fri, 18 Aug 2017 14:46:15 GMT
 Connection: keep-alive
 
 {"_id":"5980cb18e679b01c685bdc86","name":"Jason","dept":"jhhjjj","area":"DC","contact":"666-666-6666","status":"Employed","salary":"90,000","__v":0}
-
+```
 
 # Conclusion
 In summary, this completes our MEAN stack application with CRUD functionalities. It was done in two parts. First we created the server side scripting, where we used the schema for mongoDB that was handled by mongoose, APIs for exposing data, and starting the server on one our local ports. For this, we hosted it on http://localhost:3000.
