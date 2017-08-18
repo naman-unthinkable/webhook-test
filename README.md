@@ -209,7 +209,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client'));
 
 
-o 	CREATING RESTFUL APIs
+# CREATING RESTFUL APIs
 In the same file where we created our Restful APIs, we will need to define the endpoint (or data) that we want to expose.
 
 For example:
@@ -234,9 +234,6 @@ GET	Find a single contact by ID
 PUT	Update entire contact document
 DELETE	Delete a contact by ID
 
-
-
-
 Format for writing these APIs:
 1.	app.get(“/api/contacts/:id” function (req, res){
          })
@@ -248,6 +245,7 @@ Format for writing these APIs:
          })
 
 Step 5:  Now that we have the rules and syntax for writing APIs, we can write the API for getting all of the employees from our database.
+
 app.get('/api/employees', function(req, res){
     Employee.find(function(err, employees){
         if(err)
@@ -258,6 +256,7 @@ app.get('/api/employees', function(req, res){
 
 
 To add a new employee to the database:
+
 app.post('/api/employees', function(req, res){
     Employee.create( req.body, function(err, employees){
         if(err)
@@ -267,6 +266,7 @@ app.post('/api/employees', function(req, res){
 });
 
 To find a single employee by id:
+
 app.get('/api/employees/:id', function(req, res){
     Employee.findone({_id:req.params.id}, function(err, employee){
         if(err)
@@ -276,6 +276,7 @@ app.get('/api/employees/:id', function(req, res){
 });
 
 To update the employee’s information:
+
 app.put('/api/employees/:id', function(req, res){
     var query = {
         name:req.body.name,
@@ -293,6 +294,7 @@ app.put('/api/employees/:id', function(req, res){
 });
 
 And, to delete an employee:
+
 app.delete('/api/employees/:id', function(req, res){
     Employee.findoneAndRemove({_id:req.params.id}, function(err, employee){
         if(err)
@@ -300,25 +302,31 @@ app.delete('/api/employees/:id', function(req, res){
         res.json(employee);
     });
 });
+
 once we have all the functionalities written on the server side, it is ready to get hosted on one of our system ports. To assign our server with a port we type:
+
 app.listen(3000, function(){
     console.log('server is running on port 3000..');
     });
+	
 Now we have a server running on port 3000.
+
 This was all about the server.js file. Next we will proceed with the front end part of the stack.
 
-STARTING WITH FRoNT-END
+# STARTING WITH FRONT-END
 Step 1:  Create a folder named client in your root folder. Make sure that the files are as shown in the picture below.
 
- 
 Controller.js:  This file has all the controllers and JavaScript functions to control the behavior of a webpage. It also has all the HTTP requests to send data and generate views from the server.
+
 App.js: Since we are making a single page application and we don't want any page refreshes, we'll use Angular's routing capabilities.
 
 Let's look in our Angular file and add it to our application. We will be using $routeProvider in Angular to handle our routing. This way, Angular will handle all of the magic required to go get a new file and inject it into our layout.
 Index.html: It has the main layout of our application.
+
 Another HTML page in the template folder, is a separate view of the screen that we have in our app, and it will be injected in our index.html through routing.
 
 Step 1: Creating index.html
+
 Including ng-app in the header binds the html with angular modules and controllers. We use ng-view to inject different pages in index.html through routing
 
 ```html<!DoCTYPE html>
@@ -399,8 +407,11 @@ myApp.config(function($routeProvider){
 ```
 
 Step 3:   Let’s add a controller, in order to make http requests to the server.
+
 o 	Declare the name of the controller, in our case we named it ‘empController’ and inject the dependencies that will be required to bring some action in our html pages.
+
 o 	The dependencies we used here are [$scope, $route, $routeParams, $http] .
+
 ```html
 myApp.controller('empController',function($scope,$route,$routeParams,$http){
  
@@ -556,12 +567,20 @@ class="glyphicon glyphicon-list"> </span> Employees List</p>
 ```
 
 # Starting application on Local host.
+
 o 	Start the mongo server by using mongod command via the command prompt in the bin folder of the mongo installation (for example: //MongoDB/Server/3.4/bin)
+
 o 	Start the app server by opening the command prompt in the root folder by using node server.js
+
 o 	open http://localhost:3000 to run the application.
 
 # CRUD functions using cURL:
-once your application is up and running, you can also test its CRUD functionalities using the cURL command in a command line.  For the following section, GIT Bash was used to run the commands, but any command line tool that can perform cURL commands will work.  The following section features the cURL commands and output.    
+
+once your application is up and running, you can also test its CRUD functionalities using the cURL command in a command line.  
+
+For the following section, GIT Bash was used to run the commands, but any command line tool that can perform cURL commands will work. GIT Bash can be used for Windows enviroments to easily use cURL, and can be downloaded at https://git-scm.com/downloads.
+
+The following section features the cURL commands and output.    
 
 Create - Add a new user:
 ```html
@@ -635,10 +654,12 @@ Connection: keep-alive
 ```
 
 # Conclusion
+
 In summary, this completes our MEAN stack application with CRUD functionalities. It was done in two parts. First we created the server side scripting, where we used the schema for mongoDB that was handled by mongoose, APIs for exposing data, and starting the server on one our local ports. For this, we hosted it on http://localhost:3000.
 In the second part, we created the client-side view through angular.js, which was done with routing, and ng-view to inject different files into the index.html.
 We wrote controllers with injected dependencies to make requests and send data to the server through $http methods.
-We used curl to issue CRUD commands via command line to manipulate the running application.  This is another way to demonstrate that the application is working, along with manipulating the data via the GUI on localhost. 
+
+We used curl to issue CRUD commands via command line (using GIT Bash) to manipulate the running application.  This is another way to demonstrate that the application is working, along with manipulating the data via the GUI on localhost. 
 These frameworks of javascripts are single threaded and generally follow an asynchronous method, and are scalable for any website. MEAN stacks can be easily created and deployed on servers, as most of the servers support JavaScript.
 
 
