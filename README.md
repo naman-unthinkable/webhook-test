@@ -409,7 +409,7 @@ Delete Employee:
 
 Step 4: Adding html pages
 o 	Add.html
-<div class="panel panel-default">
+```html<div class="panel panel-default">
   <div class="panel-heading">
     <p class="panel-title"><span style="color:#5bc0de;" class="glyphicon glyphicon-plus"> </span> Add New Employee</p>
   </div>
@@ -442,9 +442,10 @@ o 	Add.html
 </form>   
     <div>
 <div>
+```
 
 # Add html layout:
-<div class="panel panel-default" ng-init="showEmployee()">
+```html<div class="panel panel-default" ng-init="showEmployee()">
   <div class="panel-heading">
     <p class="panel-title"><span style="color:#5bc0de;" 
 class="glyphicon glyphicon-edit"> </span> Edit Employee</p>
@@ -478,9 +479,10 @@ class="glyphicon glyphicon-edit"> </span> Edit Employee</p>
 </form>   
     <div>
 <div>
+```
 
 # Show employee layout:
-<div class="panel panel-default" ng-init="getEmployees()">
+```html<div class="panel panel-default" ng-init="getEmployees()">
   <div class="panel-heading">
     <p class="panel-title"><span style="color:#5bc0de;" 
 class="glyphicon glyphicon-list"> </span> Employees List</p>
@@ -510,9 +512,9 @@ class="glyphicon glyphicon-list"> </span> Employees List</p>
     </table>    
     <div>
 <div>
+```
 
-# List employees:
-Starting application on Local host.
+#Starting application on Local host.
 o 	Start the mongo server by using mongod command via the command prompt in the bin folder of the mongo installation (for example: //MongoDB/Server/3.4/bin)
 o 	Start the app server by opening the command prompt in the root folder by using node server.js
 o 	Open http://localhost:3000 to run the application.
