@@ -519,43 +519,49 @@ o 	Open http://localhost:3000 to run the application.
 
 # CRUD functions using cURL:
 Once your application is up and running, you can also test its CRUD functionalities using the cURL command in a command line.  For the following section, GIT Bash was used to run the commands, but any command line tool that can perform cURL commands will work.  The following section features the cURL commands and output.    
-1. Create - Add a new user:
-$ curl -i -X POST -H 'Content-Type: application/json' -d '{"name": "Felix", "department": "Cyber","location":"DC","salary":"100,000"}' http://localhost:3000/api/employees
+
+Create - Add a new user:
+
+$ curl -i -X POST -H 'Content-Type: application/json' -d '{"name": "Student", "dept": "Information","area":"Campus","sa
+lary":"70,000"}' http://localhost:3000/api/employees
 HTTP/1.1 200 OK
 X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
-Content-Length: 76
-ETag: W/"4c-Y7gak9q+zXsEyMkR8OBtkiPLCj0"
-Date: Wed, 09 Aug 2017 20:02:06 GMT
+Content-Length: 114
+ETag: W/"72-sNH6MKRvun2Z7I2GgPe9DjrSEos"
+Date: Fri, 18 Aug 2017 14:30:59 GMT
 Connection: keep-alive
 
-{"__v":0,"name":"Felix","salary":"100,000","_id":"598b6a3e1c69d020a4e327c2"}
+{"__v":0,"name":"Student","dept":"Information","area":"Campus","salary":"70,000","_id":"5996fa23fb9f8d283015da78"}
 
-2. Read - Get a list of all employees: 
+
+Read - Get a list of all employees: 
 $ curl -i -X GET http://localhost:3000/api/employees
 HTTP/1.1 200 OK
 X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
-Content-Length: 990
-ETag: W/"3de-+Ucl/hGMHabMR4QfLEtkHwP+/mQ"
-Date: Wed, 09 Aug 2017 20:04:05 GMT
+Content-Length: 1197
+ETag: W/"4ad-YtwG8TGB+9WzSWZ3V4a3doZeoSU"
+Date: Fri, 18 Aug 2017 14:33:54 GMT
 Connection: keep-alive
 
-[{"_id":"5980cb18e679b01c685bdc86","name":"Jason","dept":"Information Systems","area":"DC","contact":"666-666-6666","status":"Employed","salary":"90,000","__v":0},{"_id":"5980f31ce679b01c685bdc87","name":"Will","dept":"English","area":"Laurel","contact":"444-444-4444","status":"Intern","__v":0,"salary":"60,000"},{"_id":"5980f578e679b01c685bdc88","__v":0,"name":"Jackie","dept":"Fundraising","area":"Baltimore","status":"Employed","contact":"222-222-2222","salary":"65,000"},{"_id":"5980f5ffe679b01c685bdc89","__v":0,"name":"Tyrone","dept":"Engineering","area":"Columbia","status":"Waiting","contact":"111-111-1111","salary":"45,000"},{"_id":"5980f672e679b01c685bdc8a","__v":0,"name":"Real","dept":"Driving","area":"Maryland","status":"Employed","contact":"000-000-0000","salary":"30,000"},{"_id":"5989f73e500be7248c45c001","name":null,"__v":0,"dept":null,"area":null,"status":null,"contact":null,"salary":null},{"_id":"598b6a3e1c69d020a4e327c2","name":"Felix","salary":"100,000","__v":0}]  
+[{"_id":"5980cb18e679b01c685bdc86","name":"Jason","dept":"jhhjjj","area":"DC","contact":"666-666-6666","status":"Employed","salary":"90,000","__v":0},{"_id":"5980f31ce679b01c685bdc87","name":"Will","dept":"English","area":"Laurel","contact":"444-444-4444","status":"Intern","__v":0,"salary":"60,000"},{"_id":"5980f578e679b01c685bdc88","__v":0,"name":"Jackie","dept":"Fundraising","area":"Baltimore","status":"Employed","contact":"222-222-2222","salary":"65,000"},{"_id":"5980f5ffe679b01c685bdc89","__v":0,"name":"Tyrone","dept":"Engineering","area":"Columbia","status":"Waiting","contact":"111-111-1111","salary":"45,000"},{"_id":"5989f73e500be7248c45c001","name":null,"__v":0,"dept":null,"area":null,"status":null,"contact":null,"salary":null},{"_id":"598b6a3e1c69d020a4e327c2","name":"Fred","salary":"1,000,000","__v":0,"dept":"Law","area":"Here","status":null,"contact":null},{"_id":"599366ce771f4b1f3c167f41","name":"Professor","salary":"80,000","__v":0},{"_id":"599367ce771f4b1f3c167f42","name":"Profesdsdr","dept":"Information","area":"Catonsville","salary":"80,000","__v":0},{"_id":"5996fa23fb9f8d283015da78","name":"Student","dept":"Information","area":"Campus","salary":"70,000","__v":0}]
 
-3. Read - Get single employee with _id value of XXXXXX (use a value that exists in your app):
+
+Read - Get single employee with _id value of XXXXXX (use a value that exists in your app):
 $ curl -i -X GET http://localhost:3000/api/employees/598b6a3e1c69d020a4e327c2
 HTTP/1.1 200 OK
 X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
-Content-Length: 76
-ETag: W/"4c-aDAtdq3402mRIqdHvi21lQdG+Hg"
-Date: Wed, 09 Aug 2017 20:04:57 GMT
+Content-Length: 133
+ETag: W/"85-XjsXYRMWSZvadlEb4q4aE8er//0"
+Date: Fri, 18 Aug 2017 14:32:00 GMT
 Connection: keep-alive
 
-{"_id":"598b6a3e1c69d020a4e327c2","name":"Felix","salary":"100,000","__v":0}
+{"_id":"598b6a3e1c69d020a4e327c2","name":"Fred","salary":"1,000,000","__v":0,"dept":"Law","area":"Here","status":null,"contact":null}
 
-4. Update - Modify user with _id value of XXXXXXXXX (copy _ID from the database)
+
+Update - Modify user with _id value of XXXXXXXXX (copy _ID from the database)
 $ curl -i -X PUT -H 'Content-Type: application/json' -d '{"name": "Jeremy", "department": "Security","location":"College Park","salary":"55,000"}' http://localhost:300
 0/api/employees/598b6a3e1c69d020a4e327c2
 HTTP/1.1 200 OK
@@ -568,17 +574,18 @@ Connection: keep-alive
 
 {"_id":"598b6a3e1c69d020a4e327c2","name":"Felix","salary":"100,000","__v":0}
 
-5. Delete – Delete user with _id value of XXXXXXXXXXX:
-$ curl -i -X DELETE http://localhost:3000/api/employees/5980f672e679b01c685bdc8a
+Delete – Delete user with _id value of XXXXXXXXXXX:
+$ curl -i -X DELETE http://localhost:3000/api/employees/5980cb18e679b01c685bdc86
 HTTP/1.1 200 OK
 X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
-Content-Length: 121
-ETag: W/"79-8o8qI9PIoA6IpOD6G/l49uQCkGI"
-Date: Tue, 15 Aug 2017 14:24:12 GMT
+Content-Length: 148
+ETag: W/"94-SrrJuf+JJMHr9gHZ/tGtxDcTx9k"
+Date: Fri, 18 Aug 2017 14:46:15 GMT
 Connection: keep-alive
 
-{"_id":"5980f672e679b01c685bdc8a","__v":0,"name":null,"dept":null,"area":null,"status":null,"contact":null,"salary":null}
+{"_id":"5980cb18e679b01c685bdc86","name":"Jason","dept":"jhhjjj","area":"DC","contact":"666-666-6666","status":"Employed","salary":"90,000","__v":0}
+
 
 # Conclusion
 In summary, this completes our MEAN stack application with CRUD functionalities. It was done in two parts. First we created the server side scripting, where we used the schema for mongoDB that was handled by mongoose, APIs for exposing data, and starting the server on one our local ports. For this, we hosted it on http://localhost:3000.
