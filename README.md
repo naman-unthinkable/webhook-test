@@ -12,6 +12,7 @@ We will make a simple application and try to implement some CRUD (Create, Read, 
 We will make an employee record system, in which we can insert the details of employee, update the details and delete them. Also, we can retrieve the list of all the employees we have stored in the database.
 
 Let us understand the structure of our application:
+
 o 	Installing necessary programs
 
 o 	Creating a folder with necessary packages
@@ -75,11 +76,12 @@ Instead of creating an object inside a function, you can pass an object to a fun
 
 Setting Up Environment: You will need to get some libraries installed before you can use AngularJS for your web application. The steps below explain how angular can be downloaded to make it usable for applications.
 o	open the link “https://angularjs.org/ ”, and click on “Download AngularJS”.
+
 o	You will see the modal and various options to include Angular JS in your application.
  
-
 o       Download the file named “angular.min.js” by clicking on the Download button. It is the minified version of “angular.js”. Save this file in the same folder used by your web application.
 o	CDN (Content Delivery Network) loads and delivers all web content and web pages from regional data centers to the user based on the specific geographic location of that center. Including the CDN as a source in the script of Angular JS benefits the application in a couple ways: Referring to Google’s CDN service will prevent a user from downloading the angular.js file in their system if your computer is the host of your application, and increased parallelism may decrease the sever load and increase speed and efficiency in the loading of webpages.
+
 o	Bower & NPM: Bower and NPM (Node package Manager) are the package components of several package managers for Client Side JavaScript.
 
 The Controller sets the communication between the Model and the View. The idea behind introducing a controller in this architecture is that it implements the separation of concern; in other words, it separates the user interface from the business logic and is written so that anything that has been updated in the model will automatically be updated in HTML by the controller without manually changing it in the view and vice versa. 
@@ -91,25 +93,39 @@ o	ng-app − This directive starts an AngularJS Application
 Angular.js plays a vital role in bringing the front-end of applications into good action.  Now that we are finished with the dynamic front-end of our application, it’s time to learn about a few server-side technologies: express.js, node.js and mongoDB.
 Express.js: Express.js is a lightweight, node.js based web application framework. This JavaScript framework provides several flexible and useful features to develop mobile as well as web applications using NodeJS.
 The following are some of the core features of the Express framework:
-o	Set up middleware to respond to HTTP/RESTful Requests
-o 	It can define a routing table to perform different HTTP operations
-o 	Dynamically renders HTML Pages based on passing arguments to templates
-o 	Provides all of the features provided by core Node.js
-o 	Express prepares a thin layer; meaning that the performance is adequate
-o 	organizes the web application into an MVC architecture
-o 	Manages everything from routes to rendering views and performing HTTP requests
 
+o	Set up middleware to respond to HTTP/RESTful Requests
+
+o 	It can define a routing table to perform different HTTP operations
+
+o 	Dynamically renders HTML Pages based on passing arguments to templates
+
+o 	Provides all of the features provided by core Node.js
+
+o 	Express prepares a thin layer; meaning that the performance is adequate
+
+o 	organizes the web application into an MVC architecture
+
+o 	Manages everything from routes to rendering views and performing HTTP requests
 
 Node.js: According to Nodejs.org, NodeJS is a JavaScript runtime or platform which has been built on Chrome v8’s JavaScript engine. This has become the fastest growing and most popular platform for building fast and scalable network applications. With the command ‘node’, it starts the google chrome v8 engine that enables the network to be accessible.  It is possible to access the file in the machine or to listen to the network traffic, which is not possible using generic JavaScript. Any action that is possible to perform using ruby on rails or PHP is now possible to perform using JavaScript through NodeJS. Due to the extensively fast growing community and NPM, NodeJS is a very popular open source and cross platform application used to develop server side and networking applications.
 
 The following are some of the core features of Node.js framework: 
+
 o 	Event driven application
+
 o 	Non-blocking, I/o Model
+
 o 	Web applications are more lightweight and efficient
+
 o 	Public package repository, npm
+
 o 	Asynchronous application development
+
 o 	Applications are single threaded and easily scalable
+
 o 	High Performance
+
 
 # Creating the Application
 
@@ -118,13 +134,21 @@ Now that we have been introduced to all of the technologies that comprise the ME
 We will make an employee record system where we can perform CRUD on employee details by creating new records, accessing current records, updating existing records, and deleting employee records from our database.   
 
 The structure for the application is as follows:
+
 o 	Installing necessary programs
+
 o 	Creating a folder with the necessary packages
+
 o 	Creating front end angular development
+
 o 	Creating angular routes, partials and controllers
+
 o 	Creating a node server
+
 o 	Creating a mongoose schema
+
 o 	Creating express APIs to manipulate user data
+
 o 	Creating HTML views
 
 ** You will be required to have an IDE or text editor to write the codes for this application. For this, Visual studio was used to write the codes for this example, but any editor will work.   **
@@ -154,14 +178,20 @@ npm install body-parser  –save // installs body-parser package to parse http r
 npm install mongoose –save // installs mongoose requires to create mongoDB schema
 Step 4: Create a new file and name it server.js
 This file is responsible for creating the backend for our application. It has a schema for data that will get stored in the database through APIs. It also has all of the APIs that ensures CRUD functions in our server, and has the node server which runs the application on one of your web ports in the system.
+
 o 	Call all of the packages that we installed in step 3 to use them in our file.
+
 o 	var express = require('express');
+
 o 	var bodyParser = require('body-parser');
+
 o 	var app = express();
+
 o 	var mongoose = require('mongoose');
+
 o 	mongoose.connect('mongodb://localhost/employees');
 
-o 	Create a mongoose schema for our database.
+Create a mongoose schema for our database.
 
 var Employee = mongoose.model('Employee', mongoose.Schema({
     name:String,
