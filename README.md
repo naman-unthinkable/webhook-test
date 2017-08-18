@@ -514,7 +514,7 @@ class="glyphicon glyphicon-list"> </span> Employees List</p>
 <div>
 ```
 
-#Starting application on Local host.
+# Starting application on Local host.
 o 	Start the mongo server by using mongod command via the command prompt in the bin folder of the mongo installation (for example: //MongoDB/Server/3.4/bin)
 o 	Start the app server by opening the command prompt in the root folder by using node server.js
 o 	Open http://localhost:3000 to run the application.
@@ -523,7 +523,7 @@ o 	Open http://localhost:3000 to run the application.
 Once your application is up and running, you can also test its CRUD functionalities using the cURL command in a command line.  For the following section, GIT Bash was used to run the commands, but any command line tool that can perform cURL commands will work.  The following section features the cURL commands and output.    
 
 Create - Add a new user:
-
+```html
 $ curl -i -X POST -H 'Content-Type: application/json' -d '{"name": "Student", "dept": "Information","area":"Campus","sa
 lary":"70,000"}' http://localhost:3000/api/employees
 HTTP/1.1 200 OK
@@ -535,7 +535,7 @@ Date: Fri, 18 Aug 2017 14:30:59 GMT
 Connection: keep-alive
 
 {"__v":0,"name":"Student","dept":"Information","area":"Campus","salary":"70,000","_id":"5996fa23fb9f8d283015da78"}
-
+```
 
 Read - Get a list of all employees: 
 $ curl -i -X GET http://localhost:3000/api/employees
