@@ -327,6 +327,7 @@ Including ng-app in the header binds the html with angular modules and controlle
 ```
 
 Step 2: Create an app.js file. We will use $routeProvider in angular to handle all our routing.  This way, angular will handle all of the action required to get a new file and inject it into our layout.
+```html
 Var myApp = angular.module(‘myApp’, [‘ngRoute’]);
 The [‘ngRoute’] is the dependency that we will be calling in our app.js file. These are pre-built modules resting in our angular.js file which we will include in our script section in index.html. 
 Once we have a dependency injected into our module, we will use it in a function to handle all of the actions. Whenever $routeprovider is used, it will look for the template url to bring the new page data along with its controller and place it in ng-view section of index.html.
@@ -358,10 +359,12 @@ myApp.config(function($routeProvider){
             controller:'empController'
         });
 });
+```
 
 Step 3:   Let’s add a controller, in order to make http requests to the server.
 o 	Declare the name of the controller, in our case we named it ‘empController’ and inject the dependencies that will be required to bring some action in our html pages.
 o 	The dependencies we used here are [$scope, $route, $routeParams, $http] .
+```html
 myApp.controller('empController',function($scope,$route,$routeParams,$http){
  
 Make a request to get all of the employees from server to list.
@@ -406,6 +409,7 @@ Delete Employee:
     };
     
 });
+```
 
 Step 4: Adding html pages
 o 	Add.html
