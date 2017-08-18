@@ -1,5 +1,5 @@
 # Employee-record-system (MongoDb, Angular, Express, Node)
-Descriptive Guide TO MEAN Stack app Development
+Descriptive Guide To MEAN Stack app Development
 
 # Demo
  # https://employee-record-system.herokuapp.com/#/
@@ -24,23 +24,23 @@ o 	Creating HTML views.
 ** you will be required to have any of the IDE or text editor to write the codes for this application. For this guide, Visual studio was used to write the codes **
 # How to run the application in local host
     1. Download Node in your system.
-    2. Open cmd and run 'npm install' -- this will install the node package manager into your system.
+    2. open cmd and run 'npm install' -- this will install the node package manager into your system.
     3. Run npm install -g express
     4. Run npm install -g body-parser.
     5. Run npm install -g mongoose.
     6. Another command terminal and run 'mongod' -- this will start the mongo database server.
-    7. Open Command prompt and run "node server.js".
-    8. Open http://localhost:3000 **
+    7. open Command prompt and run "node server.js".
+    8. open http://localhost:3000 **
     
 # Introduction
 Full stack web development consists of a front-end library for data-binding and client-side views, a database for data storage, a middleware layer for process interaction, and a web server for services. 
 The stack we will be using to create a web application in this course is the MEAN stack. 
 
 The acronym stands for: ‘M’ for MongoDb, ‘E’ for Express.js, ‘A’ for Angular.js, and ‘N’ for Node.js.
-In MEAN stack web development, Angular.js is on the client side and makes AJAX calls to Express.js. Express responds to the calls in JSON format. Express, running on Node.js server, further communicates with MongoDB.                        
+In MEAN stack web development, Angular.js is on the client side and makes AJAX calls to Express.js. Express responds to the calls in JSoN format. Express, running on Node.js server, further communicates with MongoDB.                        
                  
 	
-# Overview
+# overview
 
 Before we start developing the web application, it’s a good idea to delve into the individual technologies that make up a MEAN stack. 
 Angular JS: Angular JS is a Google powered, open source framework that helps build dynamic web applications by creating client side controls for web browsers. To help make your code shorter and clearer, Angular JS comes with pre-built libraries for data binding and dependency injection, making the overall length of the code shorter. Not only does it ease the dynamicity of web application, but its functions are executed within the browser making it more server friendly. 
@@ -58,16 +58,16 @@ AngularJS services are substitutable objects that are wired together using depen
 
 
 o	Directives:	
-They are the instructions or set of instructions given to or called forth in Angular JS to manipulate a piece of the DOM (Document object-model).
+They are the instructions or set of instructions given to or called forth in Angular JS to manipulate a piece of the DoM (Document object-model).
 
 o	Controller:	
-JavaScript functions are bound to a particular scope in the DOM.
+JavaScript functions are bound to a particular scope in the DoM.
 
 o	Dependency Injection:	
 Instead of creating an object inside a function, you can pass an object to a function. Likewise, AngularJS comes with several prebuilt services which are injected into the controller as dependencies. 
 
 Setting Up Environment: You will need to get some libraries installed before you can use AngularJS for your web application. The steps below explain how angular can be downloaded to make it usable for applications.
-o	Open the link “https://angularjs.org/ ”, and click on “Download AngularJS”.
+o	open the link “https://angularjs.org/ ”, and click on “Download AngularJS”.
 o	You will see the modal and various options to include Angular JS in your application.
  
 
@@ -89,7 +89,7 @@ o 	It can define a routing table to perform different HTTP operations
 o 	Dynamically renders HTML Pages based on passing arguments to templates
 o 	Provides all of the features provided by core Node.js
 o 	Express prepares a thin layer; meaning that the performance is adequate
-o 	Organizes the web application into an MVC architecture
+o 	organizes the web application into an MVC architecture
 o 	Manages everything from routes to rendering views and performing HTTP requests
 
 
@@ -97,7 +97,7 @@ Node.js: According to Nodejs.org, NodeJS is a JavaScript runtime or platform whi
 
 The following are some of the core features of Node.js framework: 
 o 	Event driven application
-o 	Non-blocking, I/O Model
+o 	Non-blocking, I/o Model
 o 	Web applications are more lightweight and efficient
 o 	Public package repository, npm
 o 	Asynchronous application development
@@ -132,7 +132,7 @@ If you have not already installed node.js, go to https://nodejs.org and download
 Installing MongoDb
 MongoDB can be installed from https://www.mongodb.com/download-center .  Download the applicable MSI file for your systems architecture, and install it with the recommended settings.  Install the database in the same location as your project folder.  
 
-Once you have these running on your system, create a folder named MEAN App.
+once you have these running on your system, create a folder named MEAN App.
 
 All libraries and packages are required, and we will include them in our application for it to be able to run.  
 Step 1: open the command prompt for the newly created folder and type npm install.
@@ -143,7 +143,7 @@ Step 2: In the same command window write npm init; it will create the package.js
  
 Step 3: Next, install the necessary packages in our system through npm. Write the following commands to install the required packages for our application.
 npm install express --save // installs the express.js package 
-npm install body-parser  –save // installs body-parser package to parse http request to JSON format.
+npm install body-parser  –save // installs body-parser package to parse http request to JSoN format.
 npm install mongoose –save // installs mongoose requires to create mongoDB schema
 Step 4: Create a new file and name it server.js
 This file is responsible for creating the backend for our application. It has a schema for data that will get stored in the database through APIs. It also has all of the APIs that ensures CRUD functions in our server, and has the node server which runs the application on one of your web ports in the system.
@@ -165,7 +165,7 @@ var Employee = mongoose.model('Employee', mongoose.Schema({
     salary:String
 }));
 
-o 	Include Body Parser to parse all the data from http requests into JSON format. Some of the form data is sent through urlencoded service, so we can use body-parser to parse both types of data in JSON format.
+o 	Include Body Parser to parse all the data from http requests into JSoN format. Some of the form data is sent through urlencoded service, so we can use body-parser to parse both types of data in JSoN format.
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -180,7 +180,7 @@ For example:
 
 Method	Description
 GET	Find all contacts
-POST	Create a new contact
+PoST	Create a new contact
 
 
 Format for writing these type of APIs is:
@@ -231,7 +231,7 @@ app.post('/api/employees', function(req, res){
 
 To find a single employee by id:
 app.get('/api/employees/:id', function(req, res){
-    Employee.findOne({_id:req.params.id}, function(err, employee){
+    Employee.findone({_id:req.params.id}, function(err, employee){
         if(err)
             res.send(err);
         res.json(employee);
@@ -248,7 +248,7 @@ app.put('/api/employees/:id', function(req, res){
         contact:req.body.contact,
         salary:req.body.salary
     };
-    Employee.findOneAndUpdate({_id:req.params.id}, query, function(err, employee){
+    Employee.findoneAndUpdate({_id:req.params.id}, query, function(err, employee){
         if(err)
             res.send(err);
         res.json(employee);
@@ -257,20 +257,20 @@ app.put('/api/employees/:id', function(req, res){
 
 And, to delete an employee:
 app.delete('/api/employees/:id', function(req, res){
-    Employee.findOneAndRemove({_id:req.params.id}, function(err, employee){
+    Employee.findoneAndRemove({_id:req.params.id}, function(err, employee){
         if(err)
             res.send(err);
         res.json(employee);
     });
 });
-Once we have all the functionalities written on the server side, it is ready to get hosted on one of our system ports. To assign our server with a port we type:
+once we have all the functionalities written on the server side, it is ready to get hosted on one of our system ports. To assign our server with a port we type:
 app.listen(3000, function(){
     console.log('server is running on port 3000..');
     });
 Now we have a server running on port 3000.
 This was all about the server.js file. Next we will proceed with the front end part of the stack.
 
-STARTING WITH FRONT-END
+STARTING WITH FRoNT-END
 Step 1:  Create a folder named client in your root folder. Make sure that the files are as shown in the picture below.
 
  
@@ -284,7 +284,7 @@ Another HTML page in the template folder, is a separate view of the screen that 
 Step 1: Creating index.html
 Including ng-app in the header binds the html with angular modules and controllers. We use ng-view to inject different pages in index.html through routing
 
-```html<!DOCTYPE html>
+```html<!DoCTYPE html>
 <html lang="en" ng-app="myApp"> 
 <head>
     <meta charset="UTF-8">
@@ -330,7 +330,7 @@ Step 2: Create an app.js file. We will use $routeProvider in angular to handle a
 ```html
 Var myApp = angular.module(‘myApp’, [‘ngRoute’]);
 The [‘ngRoute’] is the dependency that we will be calling in our app.js file. These are pre-built modules resting in our angular.js file which we will include in our script section in index.html. 
-Once we have a dependency injected into our module, we will use it in a function to handle all of the actions. Whenever $routeprovider is used, it will look for the template url to bring the new page data along with its controller and place it in ng-view section of index.html.
+once we have a dependency injected into our module, we will use it in a function to handle all of the actions. Whenever $routeprovider is used, it will look for the template url to bring the new page data along with its controller and place it in ng-view section of index.html.
 var myApp = angular.module('myApp',['ngRoute']);
 myApp.config(function($routeProvider){
     $routeProvider
@@ -521,16 +521,16 @@ class="glyphicon glyphicon-list"> </span> Employees List</p>
 # Starting application on Local host.
 o 	Start the mongo server by using mongod command via the command prompt in the bin folder of the mongo installation (for example: //MongoDB/Server/3.4/bin)
 o 	Start the app server by opening the command prompt in the root folder by using node server.js
-o 	Open http://localhost:3000 to run the application.
+o 	open http://localhost:3000 to run the application.
 
 # CRUD functions using cURL:
-Once your application is up and running, you can also test its CRUD functionalities using the cURL command in a command line.  For the following section, GIT Bash was used to run the commands, but any command line tool that can perform cURL commands will work.  The following section features the cURL commands and output.    
+once your application is up and running, you can also test its CRUD functionalities using the cURL command in a command line.  For the following section, GIT Bash was used to run the commands, but any command line tool that can perform cURL commands will work.  The following section features the cURL commands and output.    
 
 Create - Add a new user:
 ```html
-$ curl -i -X POST -H 'Content-Type: application/json' -d '{"name": "Student", "dept": "Information","area":"Campus","sa
+$ curl -i -X PoST -H 'Content-Type: application/json' -d '{"name": "Student", "dept": "Information","area":"Campus","sa
 lary":"70,000"}' http://localhost:3000/api/employees
-HTTP/1.1 200 OK
+HTTP/1.1 200 oK
 X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
 Content-Length: 114
@@ -544,7 +544,7 @@ Connection: keep-alive
 Read - Get a list of all employees: 
 ```html
 $ curl -i -X GET http://localhost:3000/api/employees
-HTTP/1.1 200 OK
+HTTP/1.1 200 oK
 X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
 Content-Length: 1197
@@ -558,7 +558,7 @@ Connection: keep-alive
 Read - Get single employee with _id value of XXXXXX (use a value that exists in your app):
 ```html
 $ curl -i -X GET http://localhost:3000/api/employees/598b6a3e1c69d020a4e327c2
-HTTP/1.1 200 OK
+HTTP/1.1 200 oK
 X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
 Content-Length: 133
@@ -572,7 +572,7 @@ Connection: keep-alive
 Update - Modify user with _id value of XXXXXXXXX (copy _ID from the database):
 ```html
 $ curl -i -X PUT -H 'Content-Type: application/json' -d '{"name": "Jeremy", "department": "Security","location":"College Park","salary":"55,000"}' http://localhost:3000/api/employees/598b6a3e1c69d020a4e327c2
-HTTP/1.1 200 OK
+HTTP/1.1 200 oK
 X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
 Content-Length: 76
@@ -586,7 +586,7 @@ Connection: keep-alive
 Delete – Delete user with _id value of XXXXXXXXXXX:
 ```html
 $ curl -i -X DELETE http://localhost:3000/api/employees/5980cb18e679b01c685bdc86
-HTTP/1.1 200 OK
+HTTP/1.1 200 oK
 X-Powered-By: Express
 Content-Type: application/json; charset=utf-8
 Content-Length: 148
