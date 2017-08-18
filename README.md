@@ -310,9 +310,9 @@ Including ng-app in the header binds the html with angular modules and controlle
         <div ng-view></div>
         
         <footer class="footer well well-sm">
-            <p>© Sarthak Bhatt</p>
+            <p>© Created by Sarthak Bhatt</p>
+			<p>Contributed to and Edited by Jason McClure</p>
         </footer>
-
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
