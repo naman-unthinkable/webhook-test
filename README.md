@@ -12,14 +12,21 @@ We will make a simple application and try to implement some CRUD (Create, Read, 
 We will make an employee record system, in which we can insert the details of employee, update the details and delete them. Also, we can retrieve the list of all the employees we have stored in the database.
 
 Let us understand the structure of our application:
-o 	Installing necessary programs.
-o 	Creating a folder with necessary packages.
-o 	Creating front end angular development.
-o 	Creating angular route, partials and controllers.
-o 	Creating node server.
-o 	Creating mongoose schema.
-o 	Creating express API’s to play with user data.
-o 	Creating HTML views.
+o 	Installing necessary programs
+
+o 	Creating a folder with necessary packages
+
+o 	Creating front end angular development
+
+o 	Creating angular route, partials and controllers
+
+o 	Creating node server
+
+o 	Creating mongoose schema
+
+o 	Creating express API’s to play with user data
+
+o 	Creating HTML views
 
 ** you will be required to have any of the IDE or text editor to write the codes for this application. For this guide, Visual studio was used to write the codes **
 # How to run the application in local host
